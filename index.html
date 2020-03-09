@@ -9,8 +9,12 @@
         <a href="skytone://(11)/(5)">跳转天际通</a>
         <a href="intent://(11)/(5)#Intent;scheme=skytone;launchFlags=0x10008000;package=com.huawei.hiskytone;end">intent天际通</a>
         <button type="button" onclick='appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });'>点击跳转</button>
+        <button type="button" onclick='jump()'>点击跳转byF</button>
     </body>
     <script type="text/javascript">
         //appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });
+        function jump() {
+            appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });
+        }
     </script>
 </html>
