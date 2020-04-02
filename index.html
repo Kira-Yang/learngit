@@ -21,7 +21,7 @@
             window.location.href = 'hap://app/com.tilchinalink/Index?channelIdentification=0001';
         }
         
-        function showPosition() {
+        function showPosition(position) {
             if(testApi) {
                 testApi.onEvent("test1", "showPosition");
                 testApi.onEvent("test1", "Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
@@ -36,7 +36,7 @@
             if(testApi) {
                 testApi.onEvent("test1", 'watch position');
             }
-            navigator.geolocation.watchPosition(showPosition);
+            navigator.geolocation.getCurrentPosition(showPosition);
         } else {
             if(testApi) {
                 testApi.onEvent("test1", 'No geo');
