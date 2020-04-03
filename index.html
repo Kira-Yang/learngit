@@ -11,6 +11,7 @@
         <button type="button" onclick='appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });'>点击跳转</button>
         <button type="button" onclick='jump()'>点击跳转byF</button>
         <button type="button" onclick='jumpByDeeplink()'>点击跳转byDeeplink2</button>
+        <button type="button" onclick='getPosition()'>获取位置</button>
     </body>
     <script type="text/javascript">
         //appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });
@@ -29,18 +30,22 @@
             }
         }
 
+        function getPosition() {
+            if (navigator.geolocation) {
+                if(testApi) {
+                    testApi.onEvent("test1", 'get position');
+                }
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                if(testApi) {
+                    testApi.onEvent("test1", 'No geo');
+                }
+            }
+        }
+
         if(testApi) {
             testApi.onEvent("test1", '{"a":"1","b":"2"}');
         }
-        if (navigator.geolocation) {
-            if(testApi) {
-                testApi.onEvent("test1", 'watch position');
-            }
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            if(testApi) {
-                testApi.onEvent("test1", 'No geo');
-            }
-        }
+        getPosition();
     </script>
 </html>
