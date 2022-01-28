@@ -21,6 +21,7 @@
             appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });
         }
         function jumpByDeeplink() {
+            alert("onload");
             window.location.href = 'hap://app/com.tilchinalink/Index?channelIdentification=0001';
         }
         
