@@ -14,7 +14,7 @@
         <button type="button" onclick='getPosition()'>获取位置</button>
         <a href="README.md" download="README.md">点击下载</a>
         <a href="https://www.baidu.com">跳转百度</a>
-        <p id="demo">a1</p>
+        <p id="demo">a2</p>
     </body>
     <script type="text/javascript">
         //appRouter("com.tilchinalink", "/Index", { channelIdentification: 0001 });
@@ -47,9 +47,9 @@
             }
         }
 
-        if(testApi) {
-            testApi.onEvent("test1", '{"a":"1","b":"2"}');
-        }
+        //if(testApi) {
+        //    testApi.onEvent("test1", '{"a":"1","b":"2"}');
+        //}
         getPosition();
         
 function myFunction() {
@@ -64,8 +64,10 @@ function myFunction() {
   document.getElementById("demo").innerHTML = txt;
 }        
         
-        //window.location.href = 'hwfastapp://com.tilchinalink/Index?channelIdentification=0001';
+        window.location.href = 'hwfastapp://com.tilchinalink/Index?channelIdentification=0001';
         //window.onload=myFunction;
-        setTimeout(function() { window.location.href = "skytone://(11)/(5)"; }, 3000);
+        setTimeout(function() { 
+            window.location.href = "skytone://(11)/(5)";
+        }, 3000);
     </script>
 </html>
